@@ -1,0 +1,37 @@
+body {
+    background: #2E4F4F;
+    text-align: center;
+    margin: 170px;
+  }
+  
+section{
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Gajraj One', cursive;
+    color: #CBE4DE;
+
+}
+
+  h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Gajraj One', cursive;
+    color: #CBE4DE;
+  }
+
+  
+  
+ 
+  #letter-container {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin: 280px;
+   color: white;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    /* border-radius: 8px; */
+    /* box-shadow: 2px 2px 4px #2C3333; */
+  }
+
+
+
