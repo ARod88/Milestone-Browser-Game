@@ -1,12 +1,35 @@
+
+// array of words that will be using 
 let words = [ 'jaguar', 'cat', 'piranah', 'lion', 'dog', 'lizard'];
-let numberofGuessess = 5;
-let wrongGuesses = 0;
-let selectedWword = words[Math.floor(Math.random() * words.length)];
-let wordElement = document.getElementById('.letter-container');
-console.log(wordElement);
 
+//this is going to select random array 
+let selectedWord = words[Math.floor(Math.random() * words.length)];
 
+// code that will decrease number of chances when the wrong button is selected
+let numberofChances = 5;
 
+// when button is selected it will get the letters 
+let buttons = document.querySelectorAll('.alpha-button');
+buttons.forEach(button => {
+    button.addEventListener('click', event => {
+        let buttonClass = event.target.className;
+        console.log ('Button with class ${buttonClass} was clicked');
+    });
+});
+// let currentWord = Array(selectedWord.length).fill('_');
+// let alphaButtons = document.getElementsByClassName('.alpha-button')
+
+// for (let i = 0; i < alphaButtons.length; i++){
+//     alphaButtons[i].addEventListener('click'),function() {
+
+//     }
+// }
+
+// if (guessedLetters.includes(letter)) {
+//     return letter;
+//   } else {
+//     return '_';
+//   }
 
 
 

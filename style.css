@@ -1,37 +1,56 @@
 body {
     background: #2E4F4F;
     text-align: center;
-    margin: 170px;
+    border: 0px;
   }
   
 section{
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Gajraj One', cursive;
+    font-family: 'Bungee Inline', cursive;
     color: #CBE4DE;
 
 }
 
   h1 {
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Gajraj One', cursive;
+    font-family: 'Bungee Inline', cursive;
     color: #CBE4DE;
   }
+ #letter-container {
+    display: flex;
+    margin: 480px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+   
+   
+ }
 
-  
-  
- 
-  #letter-container {
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   margin: 280px;
-   color: white;
-    padding: 15px;
-    font-size: 16px;
+.alpha-button{
+  font-family: 'Bungee Inline', cursive;
+  border-radius: 12px; 
+  padding-right: 20px;
+  padding-left: 20px;  
+  font-size: medium;
+  cursor: pointer;
+  background-color: #2C3333 ;
+  color: #CBE4DE;
+   
+}
+
+#new-game-button{
+
+    font-family: 'Bungee Inline', cursive;
+    border-radius: 12px; 
+    padding-right: 20px;
+    padding-left: 20px;  
+    font-size: medium;
     cursor: pointer;
-    /* border-radius: 8px; */
-    /* box-shadow: 2px 2px 4px #2C3333; */
-  }
+    background-color: #2C3333 ;
+    color: #CBE4DE;
+     
+
+}
+
 
 
 
