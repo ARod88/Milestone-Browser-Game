@@ -47,10 +47,48 @@ section{
     cursor: pointer;
     background-color: #2C3333 ;
     color: #CBE4DE;
-     
+    
+}
+
+.tree{
+  position: relative;
+  left: 400px;
+}
+
+.hangman-head{
+  position: relative;
+  bottom: 250px;
+  right: 107px;
 
 }
 
+.hangman-body{
+  position: relative;
+  bottom: 100px;
+  right: 330px;
+}
 
+.right-arm{
+  position: relative;
+  right: 395px;
+  bottom: 122px;
+}
+.left-arm{
+  position: relative;
+  right: 646px;
+  bottom: 116px;
+}
+
+.right-leg{
+  position: relative;
+  right: 602px;
+  bottom: 5px;
+}
+
+.left-leg{
+  position: relative;
+  top: -6px;
+  right: 775px;
+}
 
 
