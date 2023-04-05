@@ -1,4 +1,39 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Hangman Game</h1>
+    <div class="tree">
+        <img src="assets\constant tree\HangmanPicTree copy.png" alt="Hangman Picture">
+
+    </div>
+
+    <div class="wrong-answer-images">
+        <img src="assets/wrong-answer/hangman-head.png" alt="hangman-head" class="hangman-head">
+        <img src="assets/wrong-answer/hangman-body.png" alt="hangman-body" class="hangman-body">
+        <img src="assets/wrong-answer/hangman-rightarm.png" alt="hangman-rightarm" class="right-arm">
+        <img src="assets\wrong-answer\hangman-left arm.png" alt="hangman-leftarm" class="left-arm">
+        <img src="assets\wrong-answer\hangman-right leg.png" alt="hangman-rightleg" class="right-leg">
+        <img src="assets\wrong-answer\hangman-left leg.png" alt="hangman-leftleg" class="left-leg">
+    </div>
+    </div>
+    <div id="guessed-word"></div>
+    <div id="chances-display"></div>
+    <div id="letter-buttons"></div>
+    <button id="reset-button">Reset</button>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,63 +44,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <h1>Lets play Hangman</h1>
     <h2>Number of guesses:</h2>
     <section>
-        <button id="new-game-button">New Game</button>
-       
-        </section>
-    <div class="Hangman-images">
-        <img src="assets\hangman-tree.png" alt="hangman-tree" class="tree">
-        <img src="assets\hangman-head.png" alt="hangman-head" class="hangman-head">
-        <img src="assets\hangman body.png" alt="hangman-body" class="hangman-body">
-        <img src="assets\hangman-rightarm.png" alt="hangman-rightarm" class="right-arm">
-        <img src="assets\hangman-left arm.png" alt="hangman-leftarm" class="left-arm">
-        <img src="assets\hangman-right leg.png" alt="hangman-rightleg" class="right-leg">
-        <img src="assets\hangman-left leg.png" alt="hangman-leftleg" class="left-leg">
-        
-       
-        
-        
+        <button class="new-game" `onclick="resetGame()`">New Game</button>
+    </section>
+    <div class="tree">
+        <img src="assets\constant tree\HangmanPicTree copy.png" alt="Hangman Picture">
 
-    </div>  
-       
-       <div id=""></div>
-    <div id="letter-container">
-            <button id="A" class="alpha-button">A</button>
-            <button id="B" class="alpha-button">B</button>
-            <button id="C" class="alpha-button">C</button>
-            <button id="D" class="alpha-button">D</button>
-            <button id="E" class="alpha-button">E</button>
-            <button id="F" class="alpha-button">F</button>
-            <button id="G" class="alpha-button">G</button>
-            <button id="H" class="alpha-button">H</button>
-            <button id="I" class="alpha-button">I</button>
-            <button id="J" class="alpha-button">J</button>
-            <button id="K" class="alpha-button">K</button>
-            <button id="L" class="alpha-button">L</button>
-            <button id="M" class="alpha-button">M</button>
-            <button id="N" class="alpha-button">N</button>
-            <button id="O" class="alpha-button">O</button>
-            <button id="P" class="alpha-button">P</button>
-            <button id="Q" class="alpha-button">Q</button>
-            <button id="R" class="alpha-button">R</button>
-            <button id="S" class="alpha-button">S</button>
-            <button id="T" class="alpha-button">T</button>
-            <button id="U" class="alpha-button">U</button>
-            <button id="V" class="alpha-button">V</button>
-            <button id="W" class="alpha-button">W</button>
-            <button id="X" class="alpha-button">X</button>
-            <button id="Y" class="alpha-button">Y</button>
-            <button id="Z" class="alpha-button">Z</button>
-
-        </div>
     </div>
+
+        
+    
+    <div class="wrong-answer-images">
+        <img src="assets/wrong-answer/hangman-head.png" alt="hangman-head" class="hangman-head">
+        <img src="assets/wrong-answer/hangman-body.png" alt="hangman-body" class="hangman-body">
+        <img src="assets/wrong-answer/hangman-rightarm.png" alt="hangman-rightarm" class="right-arm">
+        <img src="assets\wrong-answer\hangman-left arm.png" alt="hangman-leftarm" class="left-arm">
+        <img src="assets\wrong-answer\hangman-right leg.png" alt="hangman-rightleg" class="right-leg">
+        <img src="assets\wrong-answer\hangman-left leg.png" alt="hangman-leftleg" class="left-leg">
+    </div>
+    <div class="letter-buttons">
+        <button class="alpha-button" type="button" data-letter="a">A</button>
+        <button class="alpha-button" type="button" data-letter="b">B</button>
+        <button class="alpha-button" type="button" data-letter="c">C</button>
+        <button class="alpha-button" type="button" data-letter="d">D</button>
+        <button class="alpha-button" type="button" data-letter="e">E</button>
+        <button class="alpha-button" type="button" data-letter="f">F</button>
+        <button class="alpha-button" type="button" data-letter="g">G</button>
+        <button class="alpha-button" type="button" data-letter="h">H</button>
+        <button class="alpha-button" type="button" data-letter="i">I</button>
+        <button class="alpha-button" type="button" data-letter="j">J</button>
+        <button class="alpha-button" type="button" data-letter="k">K</button>
+        <button class="alpha-button" type="button" data-letter="l">L</button>
+        <button class="alpha-button" type="button" data-letter="m">M</button>
+        <button class="alpha-button" type="button" data-letter="n">N</button>
+        <button class="alpha-button" type="button" data-letter="o">O</button>
+        <button class="alpha-button" type="button" data-letter="p">P</button>
+        <button class="alpha-button" type="button" data-letter="q">Q</button>
+        <button class="alpha-button" type="button" data-letter="r">R</button>
+        <button class="alpha-button" type="button" data-letter="s">S</button>
+        <button class="alpha-button" type="button" data-letter="t">T</button>
+        <button class="alpha-button" type="button" data-letter="u">U</button>
+        <button class="alpha-button" type="button" data-letter="v">V</button>
+        <button class="alpha-button" type="button" data-letter="w">W</button>
+        <button class="alpha-button" type="button" data-letter="x">X</button>
+        <button class="alpha-button" type="button" data-letter="y">Y</button>
+        <button class="alpha-button" type="button" data-letter="z">Z</button>
+        
+        
+        <!-- add buttons for the remaining letters -->
+      </div>
+      
+  
+      
+      <div class="game-info">
+        <p id="guessed-word"></p>
+        <p id="chances-display"></p>
+      </div>
+      
   
    
     <script src="script.js" defer></script>   
 </body>
-</html>
+</html> -->

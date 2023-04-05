@@ -16,7 +16,7 @@ section{
   }
  #letter-container {
     display: flex;
-    margin: 480px;
+    /* margin: 480px; */
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: center;
@@ -37,7 +37,7 @@ section{
    
 }
 
-#new-game-button{
+.new-game-button{
 
     font-family: 'Bungee Inline', cursive;
     border-radius: 12px; 
@@ -53,6 +53,7 @@ section{
 .tree{
   position: relative;
   left: 400px;
+  
 }
 
 .hangman-head{
