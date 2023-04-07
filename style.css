@@ -18,8 +18,11 @@ h1 {
 }
 
 .text{
+
+  font-family: 'Bungee Inline', cursive;
   color: #898121;
-  font-size: x-large;
+  font-size: large;
+
 }
 
 
@@ -71,41 +74,41 @@ h1 {
 .hangman-head {
   position: absolute;
   height: 63px;
-  bottom: 2px;
+  bottom: 19px;
   right: 4px;
 }
 
 .hangman-body{
   position: absolute;
   height: 63px;
-  right: 11em;
   right: 10px;
+  top: -14px;
 }
 
 .right-arm {
   position: absolute;
   height: 50px;
-  top: -1px;
+  top: -17px;
   right: -13px;
 }
 
 .left-arm {
   position: absolute;
   height: 50px;
-  top: 2px;
+  top: -12px;
   right: 64px;
 }
 
 .right-leg {
   position: absolute;
   height: 45px;
-  top: 58px;
+  top: 43px;
   right: 2px;
 }
 
 .left-leg {
   position: absolute;
   height: 39px;
-  top: 63px;
+  top: 49px;
   right: 35px;
 }

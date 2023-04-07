@@ -18,8 +18,7 @@ const leftLeg = document.querySelector(".left-leg");
 
 // create letter buttons dynamically
 function createLetterButtons() {
-  const letters = "abcdefghijklmnopqrstuvwxyz".split("");
-  letters.forEach((letter) => {
+ "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
     const button = document.createElement("button");
     button.innerText = letter;
     button.classList.add("letter-button");
