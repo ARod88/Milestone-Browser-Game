@@ -1,153 +1,102 @@
-const words = ['jaguar', 'cat', 'piranah', 'lion', 'dog', 'lizard'];
-let answer = '';
-let numberOfChances = 6;
-let wrongAnswers = 0;
-let guessedWord = [];
+const words = ["javascript", "html", "css", "react", "angular", "vue"];
+const maxWrong = 6;
+let mistakes = 0;
+let guessed = [];
+let word = "";
 
-function randomWord() {
-  answer = words[Math.floor(Math.random() * words.length)];
+// select elements from the HTML document
+const guessedWord = document.getElementById("guessed-word");
+const chancesDisplay = document.getElementById("chances-display");
+const letterButtons = document.getElementById("letter-buttons");
+const resetButton = document.getElementById("reset-button");
+const hangmanHead = document.querySelector(".hangman-head");
+const hangmanBody = document.querySelector(".hangman-body");
+const rightArm = document.querySelector(".right-arm");
+const leftArm = document.querySelector(".left-arm");
+const rightLeg = document.querySelector(".right-leg");
+const leftLeg = document.querySelector(".left-leg");
+
+// create letter buttons dynamically
+function createLetterButtons() {
+  const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+  letters.forEach((letter) => {
+    const button = document.createElement("button");
+    button.innerText = letter;
+    button.classList.add("letter-button");
+    letterButtons.appendChild(button);
+  });
 }
 
-function displayImage(isWrong) {
-  const treeElement = document.querySelector('.tree');
-  const hangmanParts = document.querySelectorAll('.wrong-answer-images');
-
-  if (isWrong) {
-    // Show the corresponding hangman part
-    hangmanParts[wrongAnswers - 1].style.display = 'block';
-  } else {
-    // Hide the entire hangman and show the tree
-    treeElement.style.display = 'block';
-  }
+// reset the game
+function reset() {
+  mistakes = 0;
+  guessed = [];
+  hangmanHead.style.display = "none";
+  hangmanBody.style.display = "none";
+  rightArm.style.display = "none";
+  leftArm.style.display = "none";
+  rightLeg.style.display = "none";
+  leftLeg.style.display = "none";
+  word = words[Math.floor(Math.random() * words.length)];
+  guessedWord.innerText = Array(word.length).fill("_").join(" ");
+  chancesDisplay.innerText = `Chances: ${maxWrong}`;
+  document.querySelectorAll(".letter-button").forEach((button) => {
+    button.disabled = false;
+  });
 }
 
-const letterButtons = document.getElementById('letter-buttons');
-const letters = 'abcdefghijklmnopqrstuvwxyz';
-
-for (let i = 0; i < letters.length; i++) {
-  const button = document.createElement('button');
-  button.textContent = letters[i];
-  button.dataset.letter = letters[i];
-  button.addEventListener('click', handleLetterClick);
-  letterButtons.appendChild(button);
+// update the guessed word
+function updateGuessedWord() {
+  guessedWord.innerText = word
+    .split("")
+    .map((letter) => (guessed.includes(letter) ? letter : "_"))
+    .join(" ");
 }
 
-
-function handleLetterClick(event) {
-  const button = event.target;
-  guessedWord = answer.split('').map((char) => (char === button.dataset.letter ? char : '_'));
-  const guessedWordDisplay = document.getElementById('guessed-word');
-  guessedWordDisplay.textContent = guessedWord.join(' ');
-
-  if (!answer.includes(button.dataset.letter)) {
-    wrongAnswers++;
-    numberOfChances--;
-    const numberofChancesDisplay = document.getElementById('chances-display');
-    numberofChancesDisplay.textContent = `Chances: ${numberOfChances}`;
-    displayImage(true);
-    const hangmanImage = document.querySelector('.wrong-answer-images img:last-child');
-    hangmanImage.setAttribute('src', `assets/wrong-answer/hangman-head${wrongAnswers}.png`);
-    if (wrongAnswers >= 6) {
-      alert(`Game Over! The answer was ${answer}.`);
-      resetGame();
+// handle guess
+function handleGuess(e) {
+  if (e.target.tagName !== "BUTTON") return;
+  const letter = e.target.innerText;
+  if (word.includes(letter)) {
+    if (!guessed.includes(letter)) {
+      guessed.push(letter);
+      updateGuessedWord();
     }
-  } else if (guessedWord.indexOf('_') === -1) {
-    alert(`Congratulations! You guessed the word "${answer}"!`);
-    resetGame();
   } else {
-    displayImage(false);
+    mistakes++;
+    chancesDisplay.innerText = `Chances: ${maxWrong - mistakes}`;
+    if (mistakes === 1) {
+      hangmanHead.style.display = "block";
+    } else if (mistakes === 2) {
+      hangmanBody.style.display = "block";
+    } else if (mistakes === 3) {
+      rightArm.style.display = "block";
+    } else if (mistakes === 4) {
+      leftArm.style.display = "block";
+    } else if (mistakes === 5) {
+      rightLeg.style.display = "block";
+    } else {
+      leftLeg.style.display = "block";
+      chancesDisplay.innerText = "Game Over!";
+      document.querySelectorAll(".letter-button").forEach((button) => {
+        button.disabled = true;
+      });
+    }
+  }
+  if (word.split("").every((letter) => guessed.includes(letter))) {
+    chancesDisplay.innerText = "You Won!";
+    document.querySelectorAll(".letter-button").forEach((button) => {
+      button.disabled = true;
+    });
   }
 }
 
-function resetGame() {
-  randomWord();
-  wrongAnswers = 0;
-  numberOfChances = 6;
-  guessedWord = answer.split('').map(() => '_');
-  const guessedWordDisplay = document.getElementById('guessed-word');
-  guessedWordDisplay.textContent = guessedWord.join(' ');
-  const numberofChancesDisplay = document.getElementById('chances-display');
-  numberofChancesDisplay.textContent = `Chances: ${numberOfChances}`;
-  const hangmanImage = document.querySelector('.wrong-answer-images img:last-child');
-  hangmanImage.setAttribute('src', 'assets/wrong-answer/hangman-head1.png');
-  const hangmanParts = document.querySelectorAll('.wrong-answer-images img');
-  hangmanParts.forEach(part => part.style.display = 'none');
-  const treeElement = document.querySelector('.tree');
-  treeElement.style.display = 'none';
-}
+// add event listeners to the buttons
+letterButtons.addEventListener("click", handleGuess);
+resetButton.addEventListener("click", reset);
 
-function initializeGame() {
-  randomWord();
-  guessedWord = answer.split('').map(() => '_');
-  guessedLetters = [];
-  guessesLeft = 6;
-  updateDisplay();
-}
+// create the letter buttons
+createLetterButtons();
 
-const resetButton = document.getElementById('reset-button');
-resetButton.addEventListener('click', resetGame);
-
-
-// const words = ['jaguar', 'cat', 'piranah', 'lion', 'dog', 'lizard'];
-// let answer = '';
-// let numberOfChances = 6;
-// let wrongAnswers = 0;
-// let guessedWord = [];
-
-// function randomWord() {
-//   answer = words[Math.floor(Math.random() * words.length)];
-// }
-
-// randomWord();
-
-// function displayImage(isWrong) {
-//   const treeElement = document.querySelector('.tree');
-//   const hangmanParts = document.querySelectorAll('.wrong-answer-images img');
-
-//   if (isWrong) {
-//     // Show the corresponding hangman part
-//     hangmanParts[wrongAnswers - 1].style.display = 'block';
-//   } else {
-//     // Hide the entire hangman and show the tree
-//     treeElement.style.display = 'block';
-//   }
-// }
-
-// function handleLetterClick(button) {
-//   guessedWord = answer.split('').map((char) => (char === button ? char : '_'));
-//   const guessedWordDisplay = document.getElementById('guessed-word');
-//   guessedWordDisplay.textContent = guessedWord.join(' ');
-
-//   if (!answer.includes(button)) {
-//     wrongAnswers++;
-//     numberOfChances--;
-//     const numberofChancesDisplay = document.getElementById('chances-display');
-//     numberofChancesDisplay.textContent = `Chances: ${numberOfChances}`;
-//     displayImage(true);
-//     const hangmanImage = document.querySelector('.wrong-answer-images img:last-child');
-//     hangmanImage.setAttribute('src', `assets/wrong-answer/hangman-head${wrongAnswers}.png`);
-//     if (wrongAnswers >= 6) {
-//       alert(`Game Over! The answer was ${answer}.`);
-//       resetGame();
-//     }
-//   } else if (guessedWord.indexOf('_') === -1) {
-//     alert(`Congratulations! You guessed the word "${answer}"!`);
-//     resetGame();
-//   } else {
-//     displayImage(false);
-//   }
-// }
-
-// function resetGame() {
-//   randomWord();
-//   wrongAnswers = 0;
-//   numberOfChances = 6;
-//   guessedWord = answer.split('').map(() => '_');
-//   const guessedWordDisplay = document.getElementById('guessed-word');
-//   guessedWordDisplay.textContent = guessedWord.join(' ');
-//   const numberofChancesDisplay = document.getElementById('chances-display');
-//   numberofChancesDisplay.textContent = `Chances: ${numberOfChances}`;
-//   const hangmanImage = document.querySelector('.wrong-answer-images img:last-child');
-//   hangmanImage.setAttribute('src', 'assets/wrong-answer/hangman-head1.png');
-//   const image = document.querySelector('.wrong-answer-images');
-// }
+// reset the game initially
+reset();

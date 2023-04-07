@@ -1,95 +1,80 @@
 body {
-    background: #2E4F4F;
-    text-align: center;
-    border: 0px;
-  }
-  
-section{
-    font-family: 'Bungee Inline', cursive;
-    color: #CBE4DE;
-
+  background: #2E4F4F;
+  text-align: center;
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-  h1 {
-    font-family: 'Bungee Inline', cursive;
-    color: #CBE4DE;
-  }
- #letter-container {
-    display: flex;
-    /* margin: 480px; */
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
-    align-content: center;
-   
-   
- }
-
-.alpha-button{
+section {
   font-family: 'Bungee Inline', cursive;
-  border-radius: 12px; 
+  color: #CBE4DE;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  color: #CBE4DE;
+}
+
+#letter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.alpha-button {
+  font-family: 'Bungee Inline', cursive;
+  border-radius: 12px;
   padding-right: 20px;
-  padding-left: 20px;  
+  padding-left: 20px;
   font-size: medium;
   cursor: pointer;
-  background-color: #2C3333 ;
+  background-color: #2C3333;
   color: #CBE4DE;
-   
+  margin: 5px;
 }
 
-.new-game-button{
-
-    font-family: 'Bungee Inline', cursive;
-    border-radius: 12px; 
-    padding-right: 20px;
-    padding-left: 20px;  
-    font-size: medium;
-    cursor: pointer;
-    background-color: #2C3333 ;
-    color: #CBE4DE;
-    
+.new-game-button {
+  font-family: 'Bungee Inline', cursive;
+  border-radius: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: medium;
+  cursor: pointer;
+  background-color: #2C3333;
+  color: #CBE4DE;
+  margin: 20px 0;
 }
 
-.tree{
-  position: relative;
-  left: 400px;
-  
+.hangman-tree {
+  height: 250px;
+  margin-top: 20px;
 }
 
-.hangman-head{
-  position: relative;
-  bottom: 250px;
-  right: 107px;
-
+.hangman-head {
+  height: 63px;
+  margin-top: 20px;
 }
 
-.hangman-body{
-  position: relative;
-  bottom: 100px;
-  right: 330px;
+.right-arm {
+  height: 63px;
+  margin-top: 20px;
 }
 
-.right-arm{
-  position: relative;
-  right: 395px;
-  bottom: 122px;
-}
-.left-arm{
-  position: relative;
-  right: 646px;
-  bottom: 116px;
+.left-arm {
+  height: 63px;
+  margin-top: 20px;
 }
 
-.right-leg{
-  position: relative;
-  right: 602px;
-  bottom: 5px;
+.right-leg {
+  margin-top: 20px;
 }
 
-.left-leg{
-  position: relative;
-  top: -6px;
-  right: 775px;
+.left-leg {
+  margin-top: 20px;
 }
-
-
