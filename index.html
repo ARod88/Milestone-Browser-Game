@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Hangman Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
   </head>
   <body>
+    
     <h1>Hangman Game</h1>
     <div class="tree">
         <img src="assets\constant tree\HangmanPicTree copy.png" alt="Hangman Picture" class="hangman-tree" >
@@ -18,13 +22,13 @@
         <img src="assets\wrong-answer\hangman-right-arm.png" alt="hangman-rightarm" class="right-arm">
         <img src="assets\wrong-answer\hangman-left-arm.png" alt="hangman-leftarm" class="left-arm">
         <img src="assets\wrong-answer\hangman-right-leg.png" alt="hangman-rightleg" class="right-leg">
-        <img src="assets\wrong-answer\hangman-right-leg.png" alt="hangman-leftleg" class="left-leg">
+        <img src="assets\wrong-answer\hangman-left-leg.png" alt="hangman-leftleg" class="left-leg">
     </div>
     </div>
-    <div id="guessed-word"></div>
+    <div class="text"id="guessed-word"></div>
     <div id="chances-display"></div>
-    <div id="letter-buttons"></div>
-    <button id="reset-button">Reset</button>
+    <div class="keyboard" id="letter-buttons"></div>
+    <button id="reset-button">New Game</button>
     <script src="script.js"></script>
   </body>
 </html>

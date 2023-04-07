@@ -79,14 +79,14 @@ function handleGuess(e) {
       leftLeg.style.display = "block";
       chancesDisplay.innerText = "Game Over!";
       document.querySelectorAll(".letter-button").forEach((button) => {
-        button.disabled = true;
+        
       });
     }
   }
   if (word.split("").every((letter) => guessed.includes(letter))) {
     chancesDisplay.innerText = "You Won!";
     document.querySelectorAll(".letter-button").forEach((button) => {
-      button.disabled = true;
+      
     });
   }
 }

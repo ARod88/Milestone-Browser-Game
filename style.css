@@ -1,5 +1,5 @@
 body {
-  background: #2E4F4F;
+  background: #F7F1E5;
   text-align: center;
   border: 0px;
   display: flex;
@@ -9,72 +9,103 @@ body {
   height: 100vh;
 }
 
-section {
-  font-family: 'Bungee Inline', cursive;
-  color: #CBE4DE;
-}
+
+
 
 h1 {
   font-family: 'Bungee Inline', cursive;
-  color: #CBE4DE;
+  color: #898121;
 }
 
-#letter-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+.text{
+  color: #898121;
+  font-size: x-large;
 }
 
-.alpha-button {
+
+.letter-button{
   font-family: 'Bungee Inline', cursive;
-  border-radius: 12px;
+  border-radius: 5px;
+  box-shadow: 4px 2px #E7B10A;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: medium;
+  font-size: small;
   cursor: pointer;
-  background-color: #2C3333;
-  color: #CBE4DE;
+  background-color: #000000;
+  color: #E7B10A;
   margin: 5px;
+  width: 40px;
+  height: 40px;
 }
 
-.new-game-button {
+.letter-button:hover {
+  opacity: 0.5;
+  color: #4C4B16;
+}
+
+#reset-button {
   font-family: 'Bungee Inline', cursive;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
   font-size: medium;
   cursor: pointer;
-  background-color: #2C3333;
-  color: #CBE4DE;
+  background-color: #000000;
+  color: #E7B10A;
   margin: 20px 0;
 }
 
 .hangman-tree {
+ 
   height: 250px;
-  margin-top: 20px;
+  left: 55em;
+}
+
+.wrong-answer-images{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hangman-head {
+  position: absolute;
   height: 63px;
-  margin-top: 20px;
+  bottom: 2px;
+  right: 4px;
+}
+
+.hangman-body{
+  position: absolute;
+  height: 63px;
+  right: 11em;
+  right: 10px;
 }
 
 .right-arm {
-  height: 63px;
-  margin-top: 20px;
+  position: absolute;
+  height: 50px;
+  top: -1px;
+  right: -13px;
 }
 
 .left-arm {
-  height: 63px;
-  margin-top: 20px;
+  position: absolute;
+  height: 50px;
+  top: 2px;
+  right: 64px;
 }
 
 .right-leg {
-  margin-top: 20px;
+  position: absolute;
+  height: 45px;
+  top: 58px;
+  right: 2px;
 }
 
 .left-leg {
-  margin-top: 20px;
+  position: absolute;
+  height: 39px;
+  top: 63px;
+  right: 35px;
 }
