@@ -1,35 +1,67 @@
 body {
-  background: #F7F1E5;
+  background: #000000;
   text-align: center;
   border: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
+  padding: 20px;
 }
 
 
-
+main{
+  position: relative;
+  background:#e7b10a;
+  padding: 40px;
+  border-radius: 80px;
+  margin:auto;
+  height: fit-content;
+}
 
 h1 {
   font-family: 'Bungee Inline', cursive;
-  color: #898121;
+  color: #000000;
+}
+
+h2{
+   font-family: 'Bungee Inline', cursive;
+  border-radius: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: medium;
+  cursor: pointer;
+  background-color: #000000;
+  color: #E7B10A;
+  margin: 20px 0;
 }
 
 .text{
 
   font-family: 'Bungee Inline', cursive;
-  color: #898121;
+  color: #2a2625;
   font-size: large;
+  
 
 }
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 475px;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 
 
 .letter-button{
   font-family: 'Bungee Inline', cursive;
   border-radius: 5px;
-  box-shadow: 4px 2px #E7B10A;
+  box-shadow: 4px 2px #e7b10a;
   padding-right: 20px;
   padding-left: 20px;
   font-size: small;
@@ -65,8 +97,8 @@ h1 {
 }
 
 .wrong-answer-images{
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  bottom: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -112,3 +144,5 @@ h1 {
   top: 49px;
   right: 35px;
 }
+
+
