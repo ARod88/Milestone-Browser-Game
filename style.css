@@ -24,25 +24,39 @@ main{
 }
 
 h1 {
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Sedgwick Ave Display', cursive;
   color: #000000;
+
 }
 
-h2{
-   font-family: 'Bungee Inline', cursive;
+/* h2{
+  font-family: 'Sedgwick Ave Display', cursive;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: medium;
+  font-size: large;
   cursor: pointer;
   background-color: #000000;
   color: #E7B10A;
-  margin: 20px 0;
+  
+} */
+
+#category{
+  font-family: 'Sedgwick Ave Display', cursive;
+  /* padding-right: 10px;
+  padding-left: 20px; */
+  padding:5px;
+  font-size: x-small;
+  background-color: #000000;
+  color: red;
+  border-radius: 12px;
+  width: 125px;
+  margin-bottom: 10px;
 }
 
 .text{
 
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Sedgwick Ave Display', cursive;
   color: #2a2625;
   font-size: large;
   
@@ -62,7 +76,7 @@ h2{
 
 
 .letter-button{
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Sedgwick Ave Display', cursive;
   border-radius: 5px;
   box-shadow: 4px 2px #e7b10a;
   padding-right: 20px;
@@ -78,19 +92,21 @@ h2{
 
 .letter-button:hover {
   opacity: 0.5;
-  color: #4C4B16;
+  color: red;
 }
 
 #reset-button {
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Sedgwick Ave Display', cursive;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
   font-size: medium;
   cursor: pointer;
   background-color: #000000;
-  color: #E7B10A;
-  margin: 20px 0;
+ color: #E7B10A;
+ padding: 20px;
+ box-shadow: 5px 5px 10px red inset;
+
 }
 
 .hangman-tree {
