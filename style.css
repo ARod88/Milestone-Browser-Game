@@ -18,6 +18,9 @@ main{
   border-radius: 80px;
   margin:auto;
   height: fit-content;
+  box-shadow: 20px 20px 50px 10px rgb(2, 2, 2) inset;
+
+  
 }
 
 h1 {
