@@ -1,5 +1,4 @@
 body {
-  
   background: #000000;
   text-align: center;
   border: 0px;
@@ -11,73 +10,50 @@ body {
   padding: 20px;
 }
 
+h1 {
+  font-family: "Sedgwick Ave Display", cursive;
+  color: #000000;
+}
 
-main{
+main {
   position: relative;
-  background:#e7b10a;
+  background: #E7B10a;
   padding: 40px;
   border-radius: 80px;
-  margin:auto;
+  margin: auto;
   height: fit-content;
   box-shadow: 20px 20px 50px 10px rgb(2, 2, 2) inset;
-
-  
 }
 
-h1 {
-  font-family: 'Sedgwick Ave Display', cursive;
-  color: #000000;
-
-}
-
-/* h2{
-  font-family: 'Sedgwick Ave Display', cursive;
-  border-radius: 12px;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-size: large;
-  cursor: pointer;
-  background-color: #000000;
-  color: #E7B10A;
-  
-} */
-
-#category{
-  font-family: 'Gloria Hallelujah', cursive;
+#category {
+  font-family: "Gloria Hallelujah", cursive;
   padding-left: 8px;
   padding-right: 8px;
   font-size: 9px;
   background-color: #000000;
-  color: rgb(238, 15, 15);
+  color: #ee0f0f;
   /* border-radius: 12px; */
   width: 105px;
   margin-bottom: 9px;
-  
 }
 
-.text{
-
-  font-family: 'Sedgwick Ave Display', cursive;
-  color: #2a2625;
+.text {
+  font-family: "Sedgwick Ave Display", cursive;
+  color: #000000;
   font-size: large;
-  
-
 }
 
 .keyboard {
-    display: flex;
-    flex-wrap: wrap;
-    width: 475px;
-    margin: auto;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 475px;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
 }
 
-
-
-
-.letter-button{
-  font-family: 'Sedgwick Ave Display', cursive;
+.letter-button {
+  font-family: "Sedgwick Ave Display", cursive;
   border-radius: 5px;
   /* box-shadow: 4px 2px #e7b10a; */
   padding-right: 20px;
@@ -85,39 +61,37 @@ h1 {
   font-size: small;
   cursor: pointer;
   background-color: #000000;
-  color: #E7B10A;
+  color: #E7B10a;
   margin: 5px;
   width: 40px;
   height: 40px;
-  box-shadow: 5px 5px 10px red inset;
+  box-shadow: 5px 5px 10px #ee0f0f inset;
 }
 
 .letter-button:hover {
   opacity: 0.2;
-  color: red;
+  color: #ee0f0f;
 }
 
 #reset-button {
-  font-family: 'Sedgwick Ave Display', cursive;
+  font-family: "Sedgwick Ave Display", cursive;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
   font-size: medium;
   cursor: pointer;
   background-color: #000000;
- color: #E7B10A;
- padding: 20px;
- box-shadow: 5px 5px 10px red inset;
-
+  color: #E7B10a;
+  padding: 20px;
+  box-shadow: 5px 5px 10px #ee0f0f inset;
 }
 
 .hangman-tree {
- 
   height: 250px;
   left: 55em;
 }
 
-.wrong-answer-images{
+.wrong-answer-images {
   position: absolute;
   bottom: 65%;
   left: 50%;
@@ -131,7 +105,7 @@ h1 {
   right: 4px;
 }
 
-.hangman-body{
+.hangman-body {
   position: absolute;
   height: 63px;
   right: 10px;
@@ -166,4 +140,4 @@ h1 {
   right: 35px;
 }
 
-
+/*# sourceMappingURL=style.css.map */
