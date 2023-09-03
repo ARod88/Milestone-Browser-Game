@@ -1,0 +1,11 @@
+{
+  "name": "milesone-project-browser-game",
+  "version": "1.0.0",
+  "description": "Create HTML",
+  "main": "script.js",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "author": "",
+  "license": "ISC"
+}

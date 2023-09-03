@@ -1,163 +1,167 @@
-//SCSS VARIABLES
-
+// SCSS VARIABLES
 $primary-color: #000000;
-$seconday-color: #E7B10a;
+$secondary-color: #E7B10a;
 $fonts: 'Sedgwick Ave Display', cursive;
 $font-category: 'Gloria Hallelujah', cursive;
 $category-color:  #ee0f0f;
 $box-shadow: 5px 5px 10px;
 $img-position: absolute;
-$main-box-shadow:20px 20px 50px 10px;
+$main-box-shadow: 20px 20px 50px 10px;
 
+// Mixin for box shadow
+@mixin box-shadow($color) {
+  box-shadow: $box-shadow $color inset;
+}
+
+// Mixin for button styles
+@mixin button-styles {
+  font-family: $fonts;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: small;
+  cursor: pointer;
+  background-color: $primary-color;
+  color: $secondary-color;
+  margin: 5px;
+}
+
+// Mixin for positioning
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// SCSS PARTIALS
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/functions';
+
+// BODY STYLES
 body {
-  
-    background: $primary-color;
-    text-align: center;
-    border: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    padding: 20px;
-  }
-
-  h1 {
-    font-family: $fonts;
-    color: $primary-color;
-  
-  }
-
-  main{
-    position: relative;
-    background: $seconday-color;
-    padding: 40px;
-    border-radius: 80px;
-    margin:auto;
-    height: fit-content;
-    box-shadow: $main-box-shadow $primary-color inset;
-  
-    
-  }
-
-  #category{
-    font-family: $font-category;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-size: 9px;
-    background-color: $primary-color;
-    color: $category-color;
-    /* border-radius: 12px; */
-    width: 105px;
-    margin-bottom: 9px;
-    
-  }
-
-  .text{
-
-    font-family: $fonts;
-    color:$primary-color;
-    font-size: large;
-    
+  background: $primary-color;
+  text-align: center;
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 20px;
 }
 
+// HEADER STYLES
+h1 {
+  font-family: $fonts;
+  color: $primary-color;
+}
+
+// MAIN CONTAINER STYLES
+main {
+  position: relative;
+  background: $secondary-color;
+  padding: 40px;
+  border-radius: 80px;
+  margin: auto;
+  height: fit-content;
+  @include box-shadow($primary-color);
+}
+
+// CATEGORY STYLES
+#category {
+  font-family: $font-category;
+  padding: 8px;
+  font-size: 9px;
+  background-color: $primary-color;
+  color: $category-color;
+  width: 105px;
+  margin-bottom: 9px;
+}
+
+// TEXT STYLES
+.text {
+  font-family: $fonts;
+  color: $primary-color;
+  font-size: large;
+}
+
+// KEYBOARD STYLES
 .keyboard {
-    display: flex;
-    flex-wrap: wrap;
-    width: 475px;
-    margin: auto;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 475px;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.letter-button{
-    font-family: $fonts;
-    border-radius: 5px;
-    /* box-shadow: 4px 2px #e7b10a; */
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: small;
-    cursor: pointer;
-    background-color: $primary-color;
-    color: $seconday-color;
-    margin: 5px;
-    width: 40px;
-    height: 40px;
-    box-shadow: $box-shadow $category-color inset;
-  }
+// LETTER BUTTON STYLES
+.letter-button {
+  @include button-styles;
+  width: 40px;
+  height: 40px;
+  @include box-shadow($category-color);
+  transition: opacity 0.2s;
 
-  .letter-button:hover {
+  &:hover {
     opacity: 0.2;
     color: $category-color;
   }
-  
-  #reset-button {
-    font-family: $fonts;
-    border-radius: 12px;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: medium;
-    cursor: pointer;
-    background-color: $primary-color;
-   color: $seconday-color;
-   padding: 20px;
-   box-shadow: $box-shadow $category-color inset;
-  
-  }
+}
 
-  .hangman-tree {
- 
-    height: 250px;
-    left: 55em;
-  }
+// RESET BUTTON STYLES
+#reset-button {
+  @include button-styles;
+  font-size: medium;
+  padding: 20px;
+  @include box-shadow($category-color);
+}
 
-  .wrong-answer-images{
-    position: absolute;
-    bottom: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .hangman-head {
-    position: absolute;
-    height: 63px;
-    bottom: 19px;
-    right: 4px;
-  }
-  
-  .hangman-body{
-    position: absolute;
-    height: 63px;
-    right: 10px;
-    top: -14px;
-  }
-  
-  .right-arm {
-    position: absolute;
-    height: 50px;
-    top: -17px;
-    right: -13px;
-  }
-  
-  .left-arm {
-    position: absolute;
-    height: 50px;
-    top: -12px;
-    right: 64px;
-  }
-  
-  .right-leg {
-    position: absolute;
-    height: 45px;
-    top: 43px;
-    right: 2px;
-  }
-  
-  .left-leg {
-    position: absolute;
-    height: 39px;
-    top: 49px;
-    right: 35px;
-  }
-  
-  
+// HANGMAN TREE STYLES
+.hangman-tree {
+  height: 250px;
+  @include position(null, '55em', null, null);
+}
+
+// WRONG ANSWER IMAGES STYLES
+.wrong-answer-images {
+  position: absolute;
+  @include position('65%', '50%', null, null);
+  transform: translate(-50%, -50%);
+}
+
+// HANGMAN PARTS STYLES
+.hangman-head, .hangman-body, .right-arm, .left-arm, .right-leg, .left-leg {
+  @include position(null, null, null, null);
+}
+
+.hangman-head {
+  height: 63px;
+  @include position('19px', '4px', null, null);
+}
+
+.hangman-body {
+  height: 63px;
+  @include position(null, '10px', '-14px', null);
+}
+
+.right-arm {
+  height: 50px;
+  @include position('-17px', '-13px', null, null);
+}
+
+.left-arm {
+  height: 50px;
+  @include position('-12px', '64px', null, null);
+}
+
+.right-leg {
+  height: 45px;
+  @include position('43px', '2px', null, null);
+}
+
+.left-leg {
+  height: 39px;
+  @include position('49px', '35px', null, null);
+}
